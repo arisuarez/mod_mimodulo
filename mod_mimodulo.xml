@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+    <name>Mi Módulo - Formación Joomla</name>
+    <author>Open Canarias SL</author>
+    <version>0.1.0</version>
+    <description>Módulo de ejemplo para Formación Joomla</description>
+
+    <install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+    <languages folder="language">
+		<language tag="es-ES">es-ES.mod_mimodulo.ini</language>
+	</languages>
+
+    <files>
+        <filename>mod_mimodulo.xml</filename>
+        <filename module="mod_mimodulo">mod_mimodulo.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <folder>sql</folder>
+    </files>
+    <config>
+        <!--
+        Version 0.1.1
+        <fields name="params">
+    		<fieldset name="basic">
+    			<field
+    				name="mi_descripcion"
+    				type="text"
+    				label="Mi Descripción"
+    				description="Escribir una descripción para el módulo que se mostrará en la parte pública." />
+    		</fieldset>
+    	</fields>
+    -->
+    </config>
+</extension>
